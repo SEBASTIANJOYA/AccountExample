@@ -22,8 +22,9 @@ class Account {
     /*DECLARACION DE LOS METODOS PUBLICOS A UTILIZAR */
     
 public:
-    Account();
+ 
     Account(string,double);
+    const static double minresidue;
     void setNumber(string);
     string getNumber();
     double getResidue();
@@ -31,20 +32,20 @@ public:
     short int getConsignments();
     void Consign(double);
     bool Withdraw(double);
+    bool Transfer(Account*, double);
     string toString();
     virtual ~Account();
 
-    /*DECLARACION DE LOS METODOS Y ATRIBUTOS A UTILIZAR.*/
+    /*DECLARACION DE LOS METODOS Y ATRIBUTOS PRIVADOS A UTILIZAR.*/
     
 private:
 
     string numberaccount;
     double residue;
-    double minresidue;
     short int withdrawals;
     short int consignments;
     void setResidue(double);
-
+    string parseString(double);
 };
 
 #endif /* ACCOUNT_HPP */
